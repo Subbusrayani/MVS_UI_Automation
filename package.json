@@ -1,0 +1,21 @@
+{
+  "name": "mvs_ui_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "convert-excel-to-json": "^1.7.0",
+    "cypress": "^5.5.0",
+    "node-xlsx": "^0.15.0"
+  },
+  "devDependencies": {
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0"
+  },
+  "scripts": {
+    "test": "./cypress/scripts/bash.sh && cypress run",
+    "test-chrome": "npm test -- --browser chrome"
+  },
+  "author": "Subbu Rayani",
+  "license": "ISC"
+}
