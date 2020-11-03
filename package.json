@@ -3,18 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "module": "main.js",
+  "scripts": {
+    
+  },
   "dependencies": {
     "convert-excel-to-json": "^1.7.0",
     "cypress": "^5.5.0",
     "node-xlsx": "^0.15.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@cypress/webpack-preprocessor": "^5.4.10",
+    "babel-loader": "^8.1.0",
     "mochawesome": "^6.2.1",
-    "mochawesome-merge": "^4.2.0"
-  },
-  "scripts": {
-    "test": "./cypress/scripts/bash.sh && cypress run",
-    "test-chrome": "npm test -- --browser chrome"
+    "mochawesome-merge": "^4.2.0",
+    "webpack": "^5.3.2"
   },
   "author": "Subbu Rayani",
   "license": "ISC"

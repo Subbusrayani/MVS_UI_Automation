@@ -12,7 +12,7 @@ files.forEach((file) => {
         return;
     }
 
-    child_process.fork(`${filepath}/{$file}`)
+    child_process.fork(`${filepath}/${file}`)
 })
 
 
