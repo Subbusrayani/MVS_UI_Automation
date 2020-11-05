@@ -1,15 +1,38 @@
-/// <reference types="Cypress" />
+class NavigationPage {
 
-class NavigationPage
-{​​​​
- 
-getStartOrderingButton()
-{​​​​
-    return cy.contains('Start a Catering Order')
-}​​​​
- 
+    visit() {
+        cy.visit("https://dev01.ip.wawa.com/commerce/ui/");
+    }
 
- 
-}​​​​
- 
-export default NavigationPage;
+    getStartCateringOrder() {
+        const startOrder = cy.contains('Start a Catering Order')
+        startOrder.click()
+    }
+
+    getStoreSearchTextBox() {
+        const locationSearch = cy.get('input.autocomplete_locationSearchInput');
+        locationSearch.type("Philadelphia, PA, USA");
+    }
+
+    getStoreSearchIcon() {
+        const search = cy.get('svg[name="search"]');
+        search.click();
+    }
+
+    getFindStoresButton() {
+        const findStores = cy.contains('Find Stores');
+        findStores.click();
+
+    }
+
+    getStoreSearchWindowLabel() {
+        const closeStores = cy.contains('find the closest Wawa to you');
+    }
+
+    getStoreSearchIcon() {
+        const serachIcon = cy.get(':nth-child(1) > span > .sc-bwzfXH > .fsBpHN > .htpAVW');
+    }
+
+}
+
+export default NavigationPage

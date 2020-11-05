@@ -1,48 +1,43 @@
-/// <reference types="Cypress" />
+class StoreResultsPage {
 
-class StoreResultsPage
-{​​​​
- 
-getChooseAStoreLabel()
-{​​​​
-    return cy.contains('Choose a Store')
-}​​​​
 
-getSelectStoreButton()
-{​​​​
-    return cy.contains('Select Store')
-}​​​​
+    getChooseAStoreLabel() {
+        const storelabel = cy.contains('Choose a Store')
+    }
 
-getStoreFirstLineAddressLabel()
-{​​​​
-    return cy.get('h5.sc-bdVaJa.sc-htpNat.Text-sc-1xruaqj-0.hyjFo')
-}​​​​
+    getSelectStoreButton() {
+        const storebutton = cy.contains('Select Store')
+        storebutton.click()
+    }
 
-getStoreDistanceLabel()
-{​​​​
-    return cy.get('p.sc-bdVaJa.sc-htpNat.Text-sc-1xruaqj-0.jzKbzX:nth-child(2)')
-}​​​​
- 
-getStoreFullAddressLabel(){
-    return cy.get('p.sc-bdVaJa.sc-htpNat.Text-sc-1xruaqj-0.ibAtVq:nth-child(3)')
+    getStoreFirstLineAddressLabel() {
+        const addr = cy.get('h5.sc-bdVaJa.sc-htpNat.Text-sc-1xruaqj-0.hyjFo')
+    }
+
+    getStoreDistanceLabel() {
+        const dist = cy.get('p.sc-bdVaJa.sc-htpNat.Text-sc-1xruaqj-0.jzKbzX:nth-child(2)')
+    }
+
+    getStoreFullAddressLabel() {
+        const addr = cy.get('p.sc-bdVaJa.sc-htpNat.Text-sc-1xruaqj-0.ibAtVq:nth-child(3)')
+    }
+
+    getOrderingOptionsLabel() {
+        const label = cy.get('p.sc-bdVaJa.sc-htpNat.Text-sc-1xruaqj-0.gqZeSJ:nth-child(1)')
+    }
+
+    getStoreTypeOnline() {
+        const type = cy.get('svg[name="online"]')
+    }
+
+    getStoreTypeInStore() {
+        const type = cy.get('svg[name="store"]')
+    }
+
+    getShowingResultsLabel() {
+        const label = cy.contains('Showing results for')
+    }
+
 }
 
-getOrderingOptionsLabel(){
-    return cy.get('p.sc-bdVaJa.sc-htpNat.Text-sc-1xruaqj-0.gqZeSJ:nth-child(1)')
-}
-
-getStoreTypeOnline(){
-    return cy.get('svg[name="online"]')
-}
-
-getStoreTypeInStore(){
-    return cy.get('svg[name="store"]')
-}
-
-getShowingResultsLabel(){
-    return cy.contains('Showing results for')
-}
- 
-}​​​​
- 
 export default StoreResultsPage;
