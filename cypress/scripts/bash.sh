@@ -8,7 +8,7 @@ const files = fs.readdirSync(filepath);
 
 const child_process = require('child_process');
 files.forEach((file) => {
-    if(!file.endsWith(".js")){
+    if(!file.endsWith("_ts.js")){
         return;
     }
 

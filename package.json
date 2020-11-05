@@ -5,7 +5,8 @@
   "main": "index.js",
   "module": "main.js",
   "scripts": {
-    
+     "test": "node ./cypress/scripts/bash.sh && cypress run",
+     "test-chrome": "npm test -- --browser chrome"
   },
   "dependencies": {
     "convert-excel-to-json": "^1.7.0",

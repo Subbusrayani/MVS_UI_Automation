@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-11-05T23:27:19.301Z",
+    "end": "2020-11-05T23:27:42.763Z",
+    "duration": 23462,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "94cbafdc-293f-412c-b5f3-8c73af30b632",
+      "title": "",
+      "fullFile": "cypress\\integration\\testscripts\\Place_Order_ts.js",
+      "file": "cypress\\integration\\testscripts\\Place_Order_ts.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6117b8a8-27bc-437c-a401-1aae69950ffe",
+          "title": "navigate to start order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "start order",
+              "fullTitle": "navigate to start order start order",
+              "timedOut": null,
+              "duration": 21781,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://dev01.ip.wawa.com/commerce/ui/\");\nvar navigationPage = new _NavigationPage[\"default\"]();\nvar selectStorePage = new _SelectStorePage[\"default\"]();\nvar storeResultsPage = new _StoreResultsPage[\"default\"]();\nvar storeDetailsPage = new _StoreDetailsPage[\"default\"]();\nvar productListingPage = new _ProductListingPage[\"default\"]();\nvar productDetailsPage = new _ProductDetailsPage[\"default\"](); //Click on Start catering order button\nnavigationPage.getStartCateringOrder(); //Enter city/state or zip code\nselectStorePage.getStoreSearchTextBox();\ncy.wait(2000); //Click on result\nselectStorePage.selectAutoSuggest();\ncy.wait(2000); // Click find store button\nselectStorePage.getFindStoresButton();\ncy.wait(2000); //Click select store button\nstoreResultsPage.getSelectStoreButton();\ncy.wait(4000);\nstoreDetailsPage.getDatePickerIcon();\nstoreDetailsPage.getDate(\"November 9, 2020\");\nstoreDetailsPage.getTime(\"11:30 AM\");\nstoreDetailsPage.getStartOrderButton();\ncy.wait(4000);",
+              "err": {},
+              "uuid": "2fff6ce3-3efd-4b75-9eff-06ff57c7dade",
+              "parentUUID": "6117b8a8-27bc-437c-a401-1aae69950ffe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2fff6ce3-3efd-4b75-9eff-06ff57c7dade"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21781,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
