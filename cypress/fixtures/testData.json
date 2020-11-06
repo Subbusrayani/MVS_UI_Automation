@@ -1,3 +1,9 @@
 {
-  "StoresList": "Philadelphia, PA, USA"
+  "url": "https://dev01.ip.wawa.com/commerce/ui/",
+  "location": "Philadelphia, PA, USA",
+  "date":"November 7, 2020",
+  "time":"11:30 AM",
+  "productname":"Iced Tea",
+  "varietyname":"Half Gallon"
+
 }

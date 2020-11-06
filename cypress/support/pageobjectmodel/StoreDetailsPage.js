@@ -48,6 +48,7 @@ class StoreDetailsPage {
         dategiven.click()
     }
 
+
     getTime(time) {
         cy.get('select').select(time)
         //  const timegiven = cy.get('option[value=' + time + '')

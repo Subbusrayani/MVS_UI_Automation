@@ -2,96 +2,83 @@
 /// <reference types="Cypress" />
 
 
-class ProductDetailsPage
-{​​​​
- 
-getProductName()
-{​​​​
-    const name=cy.get('div[class="sc-bdVaJa sc-bwzfXH CartItem__BodyContent-of6uop-2 fWuoYd"] strong');
-}​​​​
+class CartDetailsPage{
+    getProductName()
+    {
+        const name=cy.get('div[class="sc-bdVaJa sc-bwzfXH CartItem__BodyContent-of6uop-2 fWuoYd"] strong');
+    }
 
-getProductCalorie()
-{​​​​
-    const calorie=cy.get('div[class="sc-bdVaJa sc-bwzfXH CartItem__BodyContent-of6uop-2 fWuoYd"] p:nth-child(2)');
-   
-}​​​​
+    getProductCalorie()
+    {
+        const calorie=cy.get('div[class="sc-bdVaJa sc-bwzfXH CartItem__BodyContent-of6uop-2 fWuoYd"] p:nth-child(2)');
+    }
 
-getProductVarietyName()
-{​​​​
+    getProductVarietyName()
+    {
+        const name=cy.get('div[class="sc-bdVaJa sc-bwzfXH CartItem__BodyContent-of6uop-2 fWuoYd"] p:nth-child(3)');
+    }
 
-    const name=cy.get('div[class="sc-bdVaJa sc-bwzfXH CartItem__BodyContent-of6uop-2 fWuoYd"] p:nth-child(3)');
-   
-}​​​​
+    getQuantityValue()
+    {
+        const value=cy.get('div[class="sc-bdVaJa sc-bwzfXH CartItem__BodyContent-of6uop-2 fWuoYd"] p:nth-child(3)');
+    }
 
+    getProductPrice()
+    {
+        const price=cy.get('p[data-at="product--details--price"]');
+    }
 
-getQuantityValue()
-{​​​​
+    getVarietyDropDownIcon()
+    {
+        const icon=cy.get('div[class="Select__IconBox-mc5yz9-0 bOvjaH"]');
+    }
 
-    const value=cy.get('div[class="sc-bdVaJa sc-bwzfXH CartItem__BodyContent-of6uop-2 fWuoYd"] p:nth-child(3)');
-   
-}​​​​
+    getVarietyNameInDropdown()
+    {
+        const icon=cy.get('select option').eq(1);
+    }
 
+    getAddProductCountIcon()
+    {
+        const icon=cy.get('svg[name="add"]');
+    }
 
-getProductPrice()
-{​​​​
-    const price=cy.get('p[data-at="product--details--price"]');
-   
-}​​​​
+    getReduceProductCountIcon()
+    {
+        const icon=cy.get('svg[name="remove"]');
+    }
 
-getVarietyDropDownIcon()
-{​​​​
-    const icon=cy.get('div[class="Select__IconBox-mc5yz9-0 bOvjaH"]');
-   
-}​​​​
+    getAddToCartButton()
+    {
+        const button=cy.contains('Add to Cart');
+    }
 
-getVarietyNameInDropdown()
-{​​​​
-    const icon=cy.get('select option').eq(1);
-   
-}​​​​
+    getSelectVarietyErrorMessage()
+    {
+        const errmsg=cy.get('div[class="sc-bdVaJa sc-htpNat Text-sc-1xruaqj-0 Select__StyledError-mc5yz9-2 eOiZem"]');
+    }
 
-getAddProductCountIcon()
-{​​​​
-    const icon=cy.get('svg[name="add"]');
-   
-}​​​​
+    getAddedToCartBox()
+    {
+        const cartbox=cy.get('div[role="dialog"] h5');
+    }
 
-getReduceProductCountIcon()
-{​​​​
-    const icon=cy.get('svg[name="remove"]');
-   
-}​​​​
+    getGoToCartButton()
+    {
+        const gotocartbutton=cy.contains('Go to Cart');
+    }
 
-getAddToCartButton()
-{​​​​
-    const button=cy.contains('Add to Cart');
-   
-}​​​​
+    getKeepShoppingButton()
+    {
+        const keepshoppingbutton=cy.contains('Keep shopping');
+    }
 
-getSelectVarietyErrorMessage()
-{​​​​
-    const errmsg=cy.get('div[class="sc-bdVaJa sc-htpNat Text-sc-1xruaqj-0 Select__StyledError-mc5yz9-2 eOiZem"]');
-   
-}​​​​
-
-getAddedToCartBox()
-{​​​​
-    const cartbox=cy.get('div[role="dialog"] h5');
-   
-}​​​​
-
-getGoToCartButton()
-{​​​​
-    const gotocartbutton=cy.contains('Go to Cart');
-   
-}​​​​
-getKeepShoppingButton()
-{​​​​
-    const keepshoppingbutton=cy.contains('Keep shopping');
-   
-}​​​​
-
+    getCheckoutButton()
+    {
+        const checkoutbutton=cy.contains('Checkout');
+        checkoutbutton.click()
+    }
 }
 
 
-export default ProductDetailsPage;
+export default CartDetailsPage;

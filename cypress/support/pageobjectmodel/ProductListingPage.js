@@ -23,6 +23,12 @@ class ProductListingPage{
     getBeverageProduct_Name(){
         const prodname=cy.get('#beverages h5')
     }
+
+    selectProductName(prname)
+    {
+        const productname=cy.get('div[name="' + prname + '"]')
+        productname.click()
+    }
     
     getBeverageProduct_Calorie(){
         const calorie=cy.get('#beverages p[data-at="product--listing--calorie-text"]')

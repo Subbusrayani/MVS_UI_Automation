@@ -22,17 +22,19 @@ class ProductDetailsPage{
    
     getVarietyDropDownIcon()
     {
-      const icon=cy.get('div[class="Select__IconBox-mc5yz9-0 bOvjaH"]');
+      const icon=cy.get('div[class="Select__Wrapper-mc5yz9-5 IUOBA"]');
+      icon.click()
     }
 
-   getVarietyNameInDropdown()
+   getVarietyNameInDropdown(varietyname)
     {
-      const varietyname=cy.get('select option').eq(1);
+      cy.get('select').select(varietyname)
     }
   
     getAddProductCountIcon()
     {
       const addcounticon=cy.get('svg[name="add"]');
+      addcounticon.click()
     }
     getReduceProductCountIcon()
     {
@@ -42,6 +44,7 @@ class ProductDetailsPage{
     getAddToCartButton()
     {
       const cartbutton=cy.contains('Add to Cart');
+      cartbutton.click()
     }
     getSelectVarietyErrorMessage()
     {
@@ -55,6 +58,7 @@ class ProductDetailsPage{
     getGoToCartButton()
     {
       const gotoCartButton=cy.contains('Go to Cart');
+      gotoCartButton.click()
     }
 
     getKeepShoppingButton()
