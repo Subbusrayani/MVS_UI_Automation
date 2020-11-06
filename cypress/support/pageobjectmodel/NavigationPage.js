@@ -1,7 +1,8 @@
 class NavigationPage {
 
-    visit() {
-        cy.visit("https://dev01.ip.wawa.com/commerce/ui/");
+    visit(url) {
+    //   cy.visit("https://dev01.ip.wawa.com/commerce/ui/");
+          cy.visit(url);
     }
 
     getStartCateringOrder() {
@@ -9,9 +10,9 @@ class NavigationPage {
         startOrder.click()
     }
 
-    getStoreSearchTextBox() {
+    getStoreSearchTextBox(location) {
         const locationSearch = cy.get('input.autocomplete_locationSearchInput');
-        locationSearch.type("Philadelphia, PA, USA");
+        locationSearch.type(location);
     }
 
     getStoreSearchIcon() {

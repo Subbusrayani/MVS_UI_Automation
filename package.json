@@ -5,12 +5,14 @@
   "main": "index.js",
   "module": "main.js",
   "scripts": {
-     "test": "node ./cypress/scripts/bash.sh && cypress run",
-     "test-chrome": "npm test -- --browser chrome"
+    "test": "node ./cypress/scripts/bash.sh && cypress run",
+    "test-chrome": "npm test -- --browser chrome"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.165",
     "convert-excel-to-json": "^1.7.0",
     "cypress": "^5.5.0",
+    "lodash": "^4.17.20",
     "node-xlsx": "^0.15.0"
   },
   "devDependencies": {

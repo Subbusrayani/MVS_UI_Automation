@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-11-05T23:27:19.301Z",
-    "end": "2020-11-05T23:27:42.763Z",
-    "duration": 23462,
+    "start": "2020-11-06T06:50:34.234Z",
+    "end": "2020-11-06T06:50:59.268Z",
+    "duration": 25034,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "94cbafdc-293f-412c-b5f3-8c73af30b632",
+      "uuid": "f5e95955-8594-4133-babf-3a5f8cc976fd",
       "title": "",
       "fullFile": "cypress\\integration\\testscripts\\Place_Order_ts.js",
       "file": "cypress\\integration\\testscripts\\Place_Order_ts.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "6117b8a8-27bc-437c-a401-1aae69950ffe",
+          "uuid": "42fb0060-5079-4c52-8af2-faf63bb3b900",
           "title": "navigate to start order",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "start order",
               "fullTitle": "navigate to start order start order",
               "timedOut": null,
-              "duration": 21781,
+              "duration": 23287,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.visit(\"https://dev01.ip.wawa.com/commerce/ui/\");\nvar navigationPage = new _NavigationPage[\"default\"]();\nvar selectStorePage = new _SelectStorePage[\"default\"]();\nvar storeResultsPage = new _StoreResultsPage[\"default\"]();\nvar storeDetailsPage = new _StoreDetailsPage[\"default\"]();\nvar productListingPage = new _ProductListingPage[\"default\"]();\nvar productDetailsPage = new _ProductDetailsPage[\"default\"](); //Click on Start catering order button\nnavigationPage.getStartCateringOrder(); //Enter city/state or zip code\nselectStorePage.getStoreSearchTextBox();\ncy.wait(2000); //Click on result\nselectStorePage.selectAutoSuggest();\ncy.wait(2000); // Click find store button\nselectStorePage.getFindStoresButton();\ncy.wait(2000); //Click select store button\nstoreResultsPage.getSelectStoreButton();\ncy.wait(4000);\nstoreDetailsPage.getDatePickerIcon();\nstoreDetailsPage.getDate(\"November 9, 2020\");\nstoreDetailsPage.getTime(\"11:30 AM\");\nstoreDetailsPage.getStartOrderButton();\ncy.wait(4000);",
+              "code": "//   cy.visit(\"https://dev01.ip.wawa.com/commerce/ui/\")\nvar navigationPage = new _NavigationPage[\"default\"]();\nvar selectStorePage = new _SelectStorePage[\"default\"]();\nvar storeResultsPage = new _StoreResultsPage[\"default\"]();\nvar storeDetailsPage = new _StoreDetailsPage[\"default\"]();\nvar productListingPage = new _ProductListingPage[\"default\"]();\nvar productDetailsPage = new _ProductDetailsPage[\"default\"](); //  const url = \"https://dev01.ip.wawa.com/commerce/ui/\";\nvar url = this.data.url;\nvar location = this.data.location; //  const location = \"Philadelphia, PA, USA\";\n//Click on Start catering order button\nconsole.log(url);\nnavigationPage.visit(url);\nnavigationPage.getStartCateringOrder(location); //Enter city/state or zip code\nselectStorePage.getStoreSearchTextBox();\ncy.wait(2000); //Click on result\nselectStorePage.selectAutoSuggest();\ncy.wait(2000); // Click find store button\nselectStorePage.getFindStoresButton();\ncy.wait(2000); //Click select store button\nstoreResultsPage.getSelectStoreButton();\ncy.wait(4000);\nstoreDetailsPage.getDatePickerIcon();\nstoreDetailsPage.getDate(\"November 9, 2020\");\nstoreDetailsPage.getTime(\"11:30 AM\");\nstoreDetailsPage.getStartOrderButton();\ncy.wait(4000);",
               "err": {},
-              "uuid": "2fff6ce3-3efd-4b75-9eff-06ff57c7dade",
-              "parentUUID": "6117b8a8-27bc-437c-a401-1aae69950ffe",
+              "uuid": "5c51778a-b07c-44e9-a4ab-93c894daf1d8",
+              "parentUUID": "42fb0060-5079-4c52-8af2-faf63bb3b900",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2fff6ce3-3efd-4b75-9eff-06ff57c7dade"
+            "5c51778a-b07c-44e9-a4ab-93c894daf1d8"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 21781,
+          "duration": 23287,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
