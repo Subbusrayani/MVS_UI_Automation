@@ -12,17 +12,19 @@ class SelectStorePage {
 
     selectAutoSuggest(location) {
         cy.wait(4000)
-        cy.get(':nth-child(1) > span > .sc-bwzfXH > .fsBpHN > .htpAVW').each(($e1, index, $list) => {
+        cy.get('div[class="autocomplete_dropdownContainer"] p').each(($e1, index, $list) => {
 
             if ($e1.text().includes(location)) {
                 $e1.click()
 
             }
-            else {
-                cy.log("not found")
-            }
+
         })
 
+    }
+
+    verifyLocationNameinSearchTextBox(location) {
+        cy.get("input[data-at='store--search--autocomplete-text']").should("have.value", location);
     }
 
     getFindStoresButton() {
