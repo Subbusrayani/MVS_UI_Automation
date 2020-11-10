@@ -60,6 +60,28 @@ class StoreDetailsPage {
         startOrderbutton.click()
     }
 
+    getSelectStoreButtonErrorMessage() {
+        cy.contains('Find Stores').click()
+        const storebutton = cy.get('div.error-label')
+        storebutton.get('div.error-label').then(function (element) {
+            const actualText = element.text()
+            expect(actualText.includes("This field is required")).to.be.true
+            cy.log(actualText)
+        })
+    }
+
+    getDateFieldErrorMessage() {
+        cy.contains('Start Order').click()
+        const datePicker = cy.contains('This field is required')
+        datePicker.contains('This field is required').then(function (element) {
+            const actualText = element.text()
+            expect(actualText.includes("This field is required")).to.be.true
+            cy.log(actualText)
+        })
+    }
+
+    //change store
+
 
 
 

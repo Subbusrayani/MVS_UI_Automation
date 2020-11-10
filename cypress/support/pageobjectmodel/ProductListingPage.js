@@ -91,6 +91,25 @@ class ProductListingPage {
         const price = cy.get('#breakfast strong')
     }
 
+
+    selectProductQuantityCheckout(updateitemquantity) {
+        const updatequantity = cy.get('select#mini-select').select(updateitemquantity)
+        cy.log("Updated the product quantity to", updateitemquantity)
+    }
+
+    getRemoveItemFromCart() {
+        cy.contains('Remove').click()
+        cy.contains('Yes, remove').click()
+    }
+
+    getAckAfterRemovingItem() {
+        const ackAfterRemovingCartItem = cy.contains('Your Cart is empty').text()
+        expect(ackAfterRemovingCartItem.includes("Your Cart is empty")).to.be.true
+        cy.log(ackAfterRemovingCartItem)
+    }
+
+
+
 }
 
 export default ProductListingPage;
