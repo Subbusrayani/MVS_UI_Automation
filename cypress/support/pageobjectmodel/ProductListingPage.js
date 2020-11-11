@@ -104,10 +104,24 @@ class ProductListingPage {
 
     getAckAfterRemovingItem() {
         const ackAfterRemovingCartItem = cy.contains('Your Cart is empty').text()
-        expect(ackAfterRemovingCartItem.includes("Your Cart is empty")).to.be.true
+        expect(ackAfterRemovingCartItem.includes("Your Cart is empty")).to.be.equal
         cy.log(ackAfterRemovingCartItem)
     }
 
+    getEditButton() {
+        cy.contains('Edit').click()
+    }
+
+    getAddbutton() {
+        cy.get(svg[name = "add"]).click()
+    }
+
+    getUpdateItembutton() {
+        cy.contains('Update item').click()
+        cy.wait(4000)
+        const cartitems = cy.get('div.sc - jzJRlG.sc - cSHVUG.iwbtDQ:nth - child(2)').text()
+        cy.log(cartitems)
+    }
 
 
 }
