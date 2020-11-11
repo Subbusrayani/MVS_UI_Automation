@@ -58,6 +58,7 @@ class StoreDetailsPage {
     getStartOrderButton() {
         const startOrderbutton = cy.contains('Start Order')
         startOrderbutton.click()
+        cy.url().should('contains', 'product-listing');
     }
 
     getSelectStoreButtonErrorMessage() {

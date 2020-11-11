@@ -4,8 +4,26 @@ class ProductDetailsPage {
     return cy.get('h2[data-at="product--details--product-name"]');
   }
 
+  verifyProductDetails() {
+
+    cy.fixture('testData').then(function (data) {
+      this.data = data
+
+      // Test data - order details testdata
+      const caloriename = this.data.calorie
+      const servecount = this.data.servecount
+      const price = this.data.price
+      cy.get('p[data-at="product--details--calorie"]').should('have.text', caloriename); // calorie
+      cy.get('p[data-at="product--details--serveSize"]').should('have.text', servecount); // serve count
+      cy.get('strong[data-at="product--details--price"]').should('have.text', price);   // price
+    })
+
+
+  }
   getProductCalorie() {
-    const calorie = cy.get('p[data-at="product--details--calorie"]');
+
+    const caloriename = cy.get('p[data-at="product--details--calorie"]');
+
   }
 
   getProductServeCount() {
