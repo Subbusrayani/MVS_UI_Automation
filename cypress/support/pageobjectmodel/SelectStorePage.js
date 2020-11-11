@@ -29,8 +29,8 @@ class SelectStorePage {
 
     getFindStoresButton() {
         const findStores = cy.get('button[name="Start Catering"]')
-
         findStores.click();
+        cy.url().should('contains', 'store-results');
     }
 
 

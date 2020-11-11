@@ -23,6 +23,35 @@ class CartDetailsPage {
         const price = cy.get('p[data-at="product--details--price"]');
     }
 
+
+    verifyProductDetails() {
+
+        cy.fixture('testData').then(function (data) {
+            this.data = data
+
+            // Test data - order details testdata
+
+            const location = this.data.location
+            const date = this.data.date
+            const time = this.data.time
+            const varietyname = this.data.varietyname
+            const storename = this.data.storename
+            const calorie = this.data.calorie
+            const servecount = this.data.servecount
+            const price = this.data.price
+            cy.contains('Your Order').should('have.text', "Your Order")  
+            cy.get('[data-at="cart--location--pickupDetails-heading"]').should('have.text', 'Pickup Details'); 
+            cy.get('[name="Edit"]').should('be.visible');  //Edit pickup details
+            //cy.contains(location).should('have.text', location); //location name
+            cy.contains(storename); //store name
+         //   cy.get('div[data-at="cart--item"] p:nth-child(2)').should('contains', servecount); // serve count
+            cy.get('div[data-at="cart--item"] strong:nth-child(2)').should('have.text', price);   // price
+            cy.get('div[data-at="cart--item"] p:nth-child(3)').should('have.text', varietyname); //variety name
+            cy.get('p[data-at="cart--location--pickupDetails--time-value"]').should('have.text', time); // time
+        })
+
+
+    }
     getVarietyDropDownIcon() {
         const icon = cy.get('div[class="Select__IconBox-mc5yz9-0 bOvjaH"]');
     }

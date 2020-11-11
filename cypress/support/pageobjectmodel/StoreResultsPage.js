@@ -8,6 +8,7 @@ class StoreResultsPage {
     getSelectStoreButton(store) {
         const storebutton = cy.contains(store).siblings('button')
         storebutton.click()
+        cy.url().should('contains', 'store-detail');
     }
 
     getStoreFirstLineAddressLabel() {

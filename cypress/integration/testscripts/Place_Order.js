@@ -11,6 +11,7 @@ import CheckOutPage from '../../support/PageObjectModel/CheckOutPage.js'
 import PaymentInformationPage from '../../support/PageObjectModel/PaymentInformationPage.js'
 import OrderConfirmationPage from '../../support/PageObjectModel/OrderConfirmationPage.js'
 import "cypress-iframe"
+
 describe('Place_Order Happy Path', () => {
 
     // Object creation for all pages
@@ -25,9 +26,10 @@ describe('Place_Order Happy Path', () => {
     const paymentInformationPage = new PaymentInformationPage()
     const orderConfirmationPage = new OrderConfirmationPage()
     // Variable declarations for Test data
-    var url, location, storename, date, time, productname, varietyname;
+    var url, location, storename, date, time, productname, varietyname, calorie, servecount, price;
     var firstname, lastname, phno, email, promocode;
     var cardholdername, cardnumber, cardexpirydate, securitycode, address, city, state, country, zipcode;
+
     beforeEach(function () {
         cy.fixture('testData').then(function (data) {
             this.data = data
@@ -41,6 +43,9 @@ describe('Place_Order Happy Path', () => {
             productname = this.data.productname
             varietyname = this.data.varietyname
             storename = this.data.storename
+            calorie = this.data.calorie
+            servecount = this.data.servecount
+            price = this.data.price
             //contact details test data
             firstname = this.data.firstname
             lastname = this.data.lastname
@@ -113,8 +118,6 @@ describe('Place_Order Happy Path', () => {
 
     it('Select the product from Product listing page', function () {
 
-        //Note calorie , price and serve count of product details
-
         //Select the product
         productListingPage.selectProductName(productname)
         cy.wait(4000)
@@ -126,7 +129,12 @@ describe('Place_Order Happy Path', () => {
         productDetailsPage.getVarietyNameInDropdown(varietyname)
 
         //click on add count 
-        productDetailsPage.getAddProductCountIcon()
+        //productDetailsPage.getAddProductCountIcon()
+
+        //Verify product details
+        productDetailsPage.verifyProductDetails()
+
+
     })
 
 
@@ -142,11 +150,12 @@ describe('Place_Order Happy Path', () => {
 
     it('Verify the Product and Checkout from Cart Details page', function () {
 
-
         cy.wait(4000)
+
         //Verify product name in cart details page
         cartDetailsPage.getProductName().should('have.text', productname)
-
+        //Verify product details
+        cartDetailsPage.verifyProductDetails()
         // click on checkout button
         cartDetailsPage.getCheckoutButton()
         cy.wait(10000)
