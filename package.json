@@ -6,7 +6,8 @@
   "module": "main.js",
   "scripts": {
     "test": "node ./cypress/scripts/bash.sh && cypress run",
-    "test-chrome": "npm test -- --browser chrome"
+    "test-chrome": "npm test -- --browser chrome",
+    "chromeTest": ".\\node_modules\\.bin\\cypress run --spec cypress\\integration\\testscripts\\Place_Order.js --browser chrome"
   },
   "dependencies": {
     "@types/lodash": "^4.14.165",
@@ -20,6 +21,7 @@
     "@babel/preset-env": "^7.12.1",
     "@cypress/webpack-preprocessor": "^5.4.10",
     "babel-loader": "^8.1.0",
+    "cypress-iframe": "^1.0.1",
     "mochawesome": "^6.2.1",
     "mochawesome-merge": "^4.2.0",
     "webpack": "^5.3.2"

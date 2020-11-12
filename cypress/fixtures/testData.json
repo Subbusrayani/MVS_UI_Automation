@@ -1,4 +1,27 @@
 {
   "url": "https://dev01.ip.wawa.com/commerce/ui/",
-  "location": "Philadelphia, PA, USA"
+  "location": "Philadelphia, PA, USA",
+  "date": "November 15, 2020",
+  "time": "4:30 PM",
+  "storename": "3604 CHESTNUT STREET",
+  "productname": "Iced Tea",
+  "calorie": "200 cals / serving",
+  "servecount": "Serves 9",
+  "price": "$20.00 ",
+  "varietyname": "Half Gallon",
+  "updatequantity": "6",
+  "firstname": "Test",
+  "lastname": "Wawauser",
+  "email": "testorder@wawa.com",
+  "phno": "8073542250",
+  "promocode": "WAWA05USD",
+  "cardholdername": "Hcl wawa",
+  "cardnumber": "4111111111111111",
+  "cardexpirydate": "1023",
+  "securitycode": "123",
+  "address": "123 test street",
+  "city": "Philadelphia",
+  "state": "Pennsylvania",
+  "country": "United States",
+  "zipcode": "19104"
 }

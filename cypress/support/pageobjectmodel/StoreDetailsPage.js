@@ -48,6 +48,7 @@ class StoreDetailsPage {
         dategiven.click()
     }
 
+
     getTime(time) {
         cy.get('select').select(time)
         //  const timegiven = cy.get('option[value=' + time + '')
@@ -57,7 +58,30 @@ class StoreDetailsPage {
     getStartOrderButton() {
         const startOrderbutton = cy.contains('Start Order')
         startOrderbutton.click()
+        cy.url().should('contains', 'product-listing');
     }
+
+    getSelectStoreButtonErrorMessage() {
+        cy.contains('Find Stores').click()
+        const storebutton = cy.get('div.error-label')
+        storebutton.get('div.error-label').then(function (element) {
+            const actualText = element.text()
+            expect(actualText.includes("This field is required")).to.be.true
+            cy.log(actualText)
+        })
+    }
+
+    getDateFieldErrorMessage() {
+        cy.contains('Start Order').click()
+        const datePicker = cy.contains('This field is required')
+        datePicker.contains('This field is required').then(function (element) {
+            const actualText = element.text()
+            expect(actualText.includes("This field is required")).to.be.true
+            cy.log(actualText)
+        })
+    }
+
+    //change store
 
 
 

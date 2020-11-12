@@ -1,8 +1,8 @@
 class SelectStorePage {
 
-    getStoreSearchTextBox() {
+    getStoreSearchTextBox(location) {
         const locationSearch = cy.get('input.autocomplete_locationSearchInput');
-        locationSearch.type("Philadelphia, PA, USA");
+        locationSearch.type(location);
     }
 
     getStoreSearchIcon() {
@@ -10,25 +10,27 @@ class SelectStorePage {
         search.click();
     }
 
-    selectAutoSuggest() {
+    selectAutoSuggest(location) {
         cy.wait(4000)
-        cy.get(':nth-child(1) > span > .sc-bwzfXH > .fsBpHN > .htpAVW').each(($e1, index, $list) => {
+        cy.get('div[class="autocomplete_dropdownContainer"] p').each(($e1, index, $list) => {
 
-            if ($e1.text().includes("Philadelphia, PA, USA")) {
+            if ($e1.text().includes(location)) {
                 $e1.click()
 
             }
-            else {
-                cy.log("not found")
-            }
+
         })
 
     }
 
+    verifyLocationNameinSearchTextBox(location) {
+        cy.get("input[data-at='store--search--autocomplete-text']").should("have.value", location);
+    }
+
     getFindStoresButton() {
         const findStores = cy.get('button[name="Start Catering"]')
-
         findStores.click();
+        cy.url().should('contains', 'store-results');
     }
 
 

@@ -2,10 +2,10 @@ const fs = require("fs");
 const XLSX = require("xlsx");
 
 try{
-    const workBook = XLSX.readFile("./cypress/fixtures/StoresZipCodes.xlsx");
+    const workBook = XLSX.readFile("./cypress/fixtures/Cateringlite_testdata.xlsx");
     console.log(workBook.Sheets);
 
-    const jsonData = XLSX.utils.sheet_to_json(workBook.Sheets.StoresCitiesList);
+    const jsonData = XLSX.utils.sheet_to_json(workBook.Sheets.StoresInfo);
 
     if(!jsonData){ throw new Error("no data avaialble")}
     fs.writeFileSync(

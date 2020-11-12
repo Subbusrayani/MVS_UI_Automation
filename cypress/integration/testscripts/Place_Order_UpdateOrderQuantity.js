@@ -11,7 +11,6 @@ import CheckOutPage from '../../support/PageObjectModel/CheckOutPage.js'
 import PaymentInformationPage from '../../support/PageObjectModel/PaymentInformationPage.js'
 import OrderConfirmationPage from '../../support/PageObjectModel/OrderConfirmationPage.js'
 import "cypress-iframe"
-
 describe('Place_Order Happy Path', () => {
 
     // Object creation for all pages
@@ -26,10 +25,10 @@ describe('Place_Order Happy Path', () => {
     const paymentInformationPage = new PaymentInformationPage()
     const orderConfirmationPage = new OrderConfirmationPage()
     // Variable declarations for Test data
-    var url, location, storename, date, time, productname, varietyname, calorie, servecount, price;
+    var url, location, storename, date, time, productname, varietyname;
     var firstname, lastname, phno, email, promocode;
+    var updatequantity;
     var cardholdername, cardnumber, cardexpirydate, securitycode, address, city, state, country, zipcode;
-
     beforeEach(function () {
         cy.fixture('testData').then(function (data) {
             this.data = data
@@ -43,15 +42,15 @@ describe('Place_Order Happy Path', () => {
             productname = this.data.productname
             varietyname = this.data.varietyname
             storename = this.data.storename
-            calorie = this.data.calorie
-            servecount = this.data.servecount
-            price = this.data.price
             //contact details test data
             firstname = this.data.firstname
             lastname = this.data.lastname
             email = this.data.email
             phno = this.data.phno
             promocode = this.data.promocode
+
+            //quantity details
+            updatequantity = this.data.updatequantity
 
             // Card details test date
             cardholdername = this.data.cardholdername
@@ -74,11 +73,7 @@ describe('Place_Order Happy Path', () => {
         cy.log(url)
         cy.visit(url)
         //Click on Start catering order button
-      
-        console.log(url);
-        navigationPage.visit(url);
-      
-        navigationPage.getStartCateringOrder(location)
+        navigationPage.getStartCateringOrder()
 
     })
 
@@ -122,6 +117,8 @@ describe('Place_Order Happy Path', () => {
 
     it('Select the product from Product listing page', function () {
 
+        //Note calorie , price and serve count of product details
+
         //Select the product
         productListingPage.selectProductName(productname)
         cy.wait(4000)
@@ -133,12 +130,7 @@ describe('Place_Order Happy Path', () => {
         productDetailsPage.getVarietyNameInDropdown(varietyname)
 
         //click on add count 
-        //productDetailsPage.getAddProductCountIcon()
-
-        //Verify product details
-        productDetailsPage.verifyProductDetails()
-
-
+        productDetailsPage.getAddProductCountIcon()
     })
 
 
@@ -152,75 +144,16 @@ describe('Place_Order Happy Path', () => {
 
     })
 
-    it('Verify the Product and Checkout from Cart Details page', function () {
 
+    it('Update the product quantity from checkout page', function () {
+
+        //Update the product quantity at checkout page
+        productListingPage.selectProductQuantityCheckout(updatequantity)
         cy.wait(4000)
-
-        //Verify product name in cart details page
-        cartDetailsPage.getProductName().should('have.text', productname)
-        //Verify product details
-        cartDetailsPage.verifyProductDetails()
-        // click on checkout button
-        cartDetailsPage.getCheckoutButton()
-        cy.wait(10000)
-
-
     })
 
-    it('Enter Contact information in Checkout Page', function () {
-
-
-        //enter contact information firstname,lastname, phno, email , promo code , spl instructions
-        checkOutPage.enterContactFirstName(firstname)
-        checkOutPage.enterContactLastName(lastname)
-        checkOutPage.enterContactEmail(email)
-        checkOutPage.enterContactPhonenumber(phno)
-        checkOutPage.clickPromoCodeLink()
-        checkOutPage.enterPromoCode(promocode)
-        checkOutPage.enterSpecialInstructions()
-        checkOutPage.clickAcceptCheckBox()
-
-        //Click on continue payment button 
-        checkOutPage.clickContinuePaymentButton()
 
 
 
-    })
 
-    it('Enter payment details and submit order', function () {
-
-        // Switch to payment frame
-        cy.wait(10000)
-        paymentInformationPage.switchToPaymentFrame()
-
-        //enter card holder name, card number, expirydate, security code, city , state , country, address , zip code
-
-        paymentInformationPage.enterCardHolderName(cardholdername)
-        paymentInformationPage.enterCardNumber(cardnumber)
-        paymentInformationPage.enterExpiryDate(cardexpirydate)
-        paymentInformationPage.enterSecurityCode(securitycode)
-        paymentInformationPage.enterAddress(address)
-        paymentInformationPage.enterCity(city)
-        paymentInformationPage.selectState(state)
-        paymentInformationPage.enterPostalCode(zipcode)
-        // paymentInformationPage.selectCountry(country)
-
-
-        // Click submit order
-        paymentInformationPage.clickSubmitOrderButton()
-        cy.wait(10000)
-
-
-    })
-
-    it('Verify the Order Confirmation page', function () {
-
-        //Verify order details in order confirmation page
-        orderConfirmationPage.checkOrderConfirmation()
-
-        //Verify Email id
-        orderConfirmationPage.verifyEmailId()
-
-
-    })
 })
