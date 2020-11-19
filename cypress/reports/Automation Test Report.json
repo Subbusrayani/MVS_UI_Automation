@@ -1,0 +1,278 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 9,
+    "passes": 5,
+    "pending": 0,
+    "failures": 4,
+    "start": "2020-11-19T07:08:48.927Z",
+    "end": "2020-11-19T07:11:15.520Z",
+    "duration": 146593,
+    "testsRegistered": 9,
+    "passPercent": 55.55555555555556,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "368fadf3-bd1d-436e-a0d7-371c1e7acd5e",
+      "title": "",
+      "fullFile": "cypress\\integration\\testscripts\\CustomerLitePortal\\Place_Order_ChangeStore.js",
+      "file": "cypress\\integration\\testscripts\\CustomerLitePortal\\Place_Order_ChangeStore.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+          "title": "Change Store from Cart Details Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Start Catering Order",
+              "fullTitle": "Change Store from Cart Details Page Start Catering Order",
+              "timedOut": null,
+              "duration": 9216,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"1. CLICK ON 'START ORDER' BUTTON\"",
+              "code": "",
+              "err": {},
+              "uuid": "362ae5b6-9f42-4e8b-b629-05aadde592be",
+              "parentUUID": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Enter Location name",
+              "fullTitle": "Change Store from Cart Details Page Enter Location name",
+              "timedOut": null,
+              "duration": 21357,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  \"1. ENTER THE CITY NAME 'Philadelphia, PA, USA' IN THE SEARCH TEXT FIELD\",\n  \"2. SELECT THE CITY NAME 'Philadelphia, PA, USA' FROM AUTO SUGGESTION LIST\",\n  \"3. VERIFY WHETHER CITY 'Philadelphia, PA, USA' IS SELECTED \",\n  \"4. CLICK ON 'FIND STORES' BUTTON\"\n]",
+              "code": "",
+              "err": {},
+              "uuid": "723b208f-0b2c-4f28-8787-b07139067c54",
+              "parentUUID": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select a store from the stores list",
+              "fullTitle": "Change Store from Cart Details Page Select a store from the stores list",
+              "timedOut": null,
+              "duration": 7754,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"1. CLICK ON 'SELECT STORE' BUTTON -3604 CHESTNUT STREET\"",
+              "code": "",
+              "err": {},
+              "uuid": "ba936f58-4f6f-468f-b088-5944b310f3aa",
+              "parentUUID": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Enter the pick up details ( Date and Time )",
+              "fullTitle": "Change Store from Cart Details Page Enter the pick up details ( Date and Time )",
+              "timedOut": null,
+              "duration": 4647,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  \"1. PICK THE DATE FROM THE DATE PICKER\",\n  \"2.SELECT THE TIME\"\n]",
+              "code": "",
+              "err": {},
+              "uuid": "3d0e56dd-4afb-4d2b-8643-1df7926bbf2f",
+              "parentUUID": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Start the Order",
+              "fullTitle": "Change Store from Cart Details Page Start the Order",
+              "timedOut": null,
+              "duration": 158,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"1. CLICK ON 'START ORDER' BUTTON \"",
+              "code": "",
+              "err": {},
+              "uuid": "ac1087bf-d095-4e31-97a8-f8d1e0d15a95",
+              "parentUUID": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select the product from Product listing page",
+              "fullTitle": "Change Store from Cart Details Page Select the product from Product listing page",
+              "timedOut": null,
+              "duration": 25073,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"1. SELECT THE PRODUCT FROM PRODUCT DETAILS PAGE - Iced Tea\"",
+              "code": "",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `15000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `15000ms` to complete.\n    at https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:159074:22\n    at tryCatcher (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:10325:23)\n    at https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5447:41\n    at tryCatcher (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromise0 (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8362:10)\n    at Promise._settlePromises (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8438:18)\n    at _drainQueueStep (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5032:12)\n    at _drainQueue (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5025:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5041:5)\n    at Async.drainQueues (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:4911:14)",
+                "diff": null
+              },
+              "uuid": "6120783a-db84-405a-8c64-35378d0f15fb",
+              "parentUUID": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adding the selected product to the Cart",
+              "fullTitle": "Change Store from Cart Details Page Adding the selected product to the Cart",
+              "timedOut": null,
+              "duration": 25056,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"1. CLICK ON ' ADD TO CART ' BUTTON Half Gallon\"",
+              "code": "",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `15000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `15000ms` to complete.\n    at https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:159074:22\n    at tryCatcher (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:10325:23)\n    at https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5447:41\n    at tryCatcher (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromise0 (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8362:10)\n    at Promise._settlePromises (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8438:18)\n    at _drainQueueStep (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5032:12)\n    at _drainQueue (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5025:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5041:5)\n    at Async.drainQueues (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:4911:14)",
+                "diff": null
+              },
+              "uuid": "e13d052c-1287-48a1-969e-c2a08edbed54",
+              "parentUUID": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit Pick up details - Change Store",
+              "fullTitle": "Change Store from Cart Details Page Edit Pick up details - Change Store",
+              "timedOut": null,
+              "duration": 25038,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"1. NAVIGATE TO CART DETAILS PAGE AND CLICK ON 'EDIT' BUTTON FROM PICKUP DETAILS SECTION\"",
+              "code": "",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `15000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `15000ms` to complete.\n    at https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:159074:22\n    at tryCatcher (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:10325:23)\n    at https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5447:41\n    at tryCatcher (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromise0 (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8362:10)\n    at Promise._settlePromises (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8438:18)\n    at _drainQueueStep (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5032:12)\n    at _drainQueue (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5025:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5041:5)\n    at Async.drainQueues (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:4911:14)",
+                "diff": null
+              },
+              "uuid": "2eca5408-e4f4-46fc-8d45-7750081e13de",
+              "parentUUID": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify the updated store Name in Cart Details Page",
+              "fullTitle": "Change Store from Cart Details Page Verify the updated store Name in Cart Details Page",
+              "timedOut": null,
+              "duration": 25057,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"VERIFY WHETHER NAVIAGTED TO CART DETAILS PAGE AND CHECK WHETHER STORE NAME IS UPDATED-525 BURMONT AVENUE\"",
+              "code": "",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `15000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `15000ms` to complete.\n    at https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:159074:22\n    at tryCatcher (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:10325:23)\n    at https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5447:41\n    at tryCatcher (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromise0 (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8362:10)\n    at Promise._settlePromises (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:8438:18)\n    at _drainQueueStep (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5032:12)\n    at _drainQueue (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5025:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:5041:5)\n    at Async.drainQueues (https://qa01.ip.wawa.com/__cypress/runner/cypress_runner.js:4911:14)",
+                "diff": null
+              },
+              "uuid": "7431b5a7-35f3-44ee-b018-d550e73445bc",
+              "parentUUID": "d24e779c-5186-4d28-9b01-d5de0bffe399",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "362ae5b6-9f42-4e8b-b629-05aadde592be",
+            "723b208f-0b2c-4f28-8787-b07139067c54",
+            "ba936f58-4f6f-468f-b088-5944b310f3aa",
+            "3d0e56dd-4afb-4d2b-8643-1df7926bbf2f",
+            "ac1087bf-d095-4e31-97a8-f8d1e0d15a95"
+          ],
+          "failures": [
+            "6120783a-db84-405a-8c64-35378d0f15fb",
+            "e13d052c-1287-48a1-969e-c2a08edbed54",
+            "2eca5408-e4f4-46fc-8d45-7750081e13de",
+            "7431b5a7-35f3-44ee-b018-d550e73445bc"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 143356,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "Automation Test Report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "Automation Test Report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "code": false,
+        "charts": true,
+        "inline": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

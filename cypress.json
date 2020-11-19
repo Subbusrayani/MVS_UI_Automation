@@ -3,17 +3,19 @@
     "defaultCommandTimeout": 10000,
     "execTimeout": 60000,
     "pageLoadTimeout": 60000,
-    "requestTimeout":15000,
+    "requestTimeout": 15000,
     "responseTimeout": 15000,
-
     "reporter": "mochawesome",
-    "reporterOptions":{
+    "reporterOptions": {
         "reportDir": "cypress/reports",
-        "reportFilename": "report",
-        "overwrite": true,
-        "html": true,
+        "reportFilename": "Automation Test Report",
+        "overwrite": false,
+        "html": false,
         "json": true,
-        "charts": true
+        "code": false,
+        "charts": true,
+        "inline": true
     },
-    "video": false
+    "screenshotsFolder": "cypress/screenshots/testscripts",
+    "video": true
 }

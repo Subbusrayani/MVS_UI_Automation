@@ -1,0 +1,163 @@
+/// <reference types="Cypress" />
+/// <reference types="cypress-iframe" />
+import NavigationPage from '../../../support/customerliteportal/pageobjectmodel/NavigationPage.js'
+import SelectStorePage from '../../../support/customerliteportal/pageobjectmodel/SelectStorePage.js'
+import StoreResultsPage from '../../../support/customerliteportal/pageobjectmodel/StoreResultsPage.js'
+import StoreDetailsPage from '../../../support/customerliteportal/pageobjectmodel/StoreDetailsPage.js'
+import ProductListingPage from '../../../support/customerliteportal/pageobjectmodel/ProductListingPage.js'
+import ProductDetailsPage from '../../../support/customerliteportal/pageobjectmodel/ProductDetailsPage.js'
+import CartDetailsPage from '../../../support/customerliteportal/pageobjectmodel/CartDetailsPage.js'
+import CheckOutPage from '../../../support/customerliteportal/pageobjectmodel/CheckOutPage.js'
+import PaymentInformationPage from '../../../support/customerliteportal/pageobjectmodel/PaymentInformationPage.js'
+import OrderConfirmationPage from '../../../support/customerliteportal/pageobjectmodel/OrderConfirmationPage.js'
+import "cypress-iframe"
+describe('Place_Order - Remove the Cart items', () => {
+
+    // Object creation for all pages
+    const navigationPage = new NavigationPage()
+    const selectStorePage = new SelectStorePage()
+    const storeResultsPage = new StoreResultsPage()
+    const storeDetailsPage = new StoreDetailsPage()
+    const productListingPage = new ProductListingPage()
+    const productDetailsPage = new ProductDetailsPage()
+    const cartDetailsPage = new CartDetailsPage()
+    const checkOutPage = new CheckOutPage()
+    const paymentInformationPage = new PaymentInformationPage()
+    const orderConfirmationPage = new OrderConfirmationPage()
+    // Variable declarations for Test data
+    var url, location, storename, date, time, productname, varietyname;
+    var firstname, lastname, phno, email, promocode;
+    var updatequantity;
+    var cardholdername, cardnumber, cardexpirydate, securitycode, address, city, state, country, zipcode;
+    beforeEach(function () {
+        cy.fixture('testData').then(function (data) {
+            this.data = data
+
+            // Test data - order details testdata
+
+            url = this.data.url
+            location = this.data.location
+            date = this.data.date
+            time = this.data.time
+            productname = this.data.productname
+            varietyname = this.data.varietyname
+            storename = this.data.storename
+            //contact details test data
+            firstname = this.data.firstname
+            lastname = this.data.lastname
+            email = this.data.email
+            phno = this.data.phno
+            promocode = this.data.promocode
+
+            //quantity details
+            updatequantity = this.data.updatequantity
+
+            // Card details test date
+            cardholdername = this.data.cardholdername
+            cardnumber = this.data.cardnumber
+            cardexpirydate = this.data.cardexpirydate
+            securitycode = this.data.securitycode
+            address = this.data.address
+            city = this.data.city
+            state = this.data.state
+            country = this.data.country
+            zipcode = this.data.zipcode
+
+
+
+        })
+    })
+
+    it('Start Catering Order', function () {
+
+        cy.log(url)
+        cy.visit(url)
+        //Click on Start catering order button
+        navigationPage.getStartCateringOrder()
+
+    })
+
+    it('Enter Location name', function () {
+
+        cy.wait(2000)
+
+        selectStorePage.getStoreSearchTextBox(location)
+        //Click on result
+        selectStorePage.selectAutoSuggest(location)
+        cy.wait(2000)
+
+        //Verify location name 
+        selectStorePage.verifyLocationNameinSearchTextBox(location)
+        // Click find store button
+        selectStorePage.getFindStoresButton()
+        cy.wait(2000)
+    })
+
+    it('Select a store from the stores list', function () {
+
+        //Click select store button
+        storeResultsPage.getSelectStoreButton(storename)
+        cy.wait(4000)
+    })
+
+    it('Enter the pick up details ( Date and Time )', function () {
+        //Select date
+        storeDetailsPage.getDatePickerIcon()
+        storeDetailsPage.getDate(date)
+        //Select time
+        cy.wait(4000)
+        storeDetailsPage.getTime(time)
+    })
+
+    it('Start the Order', function () {
+        //click start order button
+        storeDetailsPage.getStartOrderButton()
+
+    })
+
+    it('Select the product from Product listing page', function () {
+
+        //Note calorie , price and serve count of product details
+
+        //Select the product
+        productListingPage.selectProductName(productname)
+        cy.wait(4000)
+
+        // Verifying actual product name in product details page
+        productDetailsPage.getProductName().should('have.text', productname)
+
+        //Select variety name from dropdown
+        productDetailsPage.getVarietyNameInDropdown(varietyname)
+
+        //click on add count 
+        productDetailsPage.getAddProductCountIcon()
+    })
+
+
+    it('Adding the selected product to the Cart', function () {
+        //click on Add to cart button
+        productDetailsPage.getAddToCartButton()
+
+        //Click on Go to cart button 
+        productDetailsPage.getGoToCartButton()
+        cy.wait(4000)
+
+    })
+
+
+    it('Update the product quantity from checkout page', function () {
+
+        //Update the product quantity at checkout page
+        productListingPage.selectProductQuantityCheckout(updatequantity)
+    })
+
+    it('Remove the cart item from checkout page', function () {
+
+        productListingPage.getRemoveItemFromCart()
+    })
+
+
+
+
+
+})

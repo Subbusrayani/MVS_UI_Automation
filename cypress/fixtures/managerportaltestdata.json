@@ -1,0 +1,14 @@
+{
+    "TestcaseName": "Place_Order.js",
+    "url": "https://qa01.ip.wawa.com/manager-portal/ui/dashboard",
+    "storenumber": "00055",
+    "storeaddress": "3604 Chestnut Street, Philadelphia, PA, 19104",
+    "phonenumber": "8073542250",
+    "firstname": "Test",
+    "lastname": "Wawauser",
+    "email": "testorder@wawa.com",
+    "ordernumber": "133",
+    "startdate": "",
+    "enddate": "",
+    "dropdownoption": "Order Value: Low to High"
+}
